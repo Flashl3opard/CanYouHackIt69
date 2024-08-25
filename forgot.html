@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ProPlays - A Community and Gamers Forum App</title>
+    <link rel="stylesheet" href="forgot.css" />
+  </head>
+  <body>
+    <form onsubmit="myfunction(event)">
+      <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+      </div>
+      <h3>Forgot Password</h3>
+      <label for="email">Enter your email address</label>
+      <input type="text" id="email" placeholder="Email" required />
+      <button type="submit">Continue</button>
+    </form>
+
+    <script type="text/javascript">
+      function myfunction(event) {
+        event.preventDefault();
+        var email = document.getElementById("email").value;
+
+        if (email) {
+          localStorage.setItem("userEmail", email);
+          alert("Email saved: " + email);
+        } else {
+          alert("Please enter a valid email address.");
+        }
+      }
+    </script>
+  </body>
+</html>
